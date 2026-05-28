@@ -17,10 +17,6 @@ RUN composer install --no-dev --optimize-autoloader
 
 RUN a2enmod rewrite
 
-COPY .env.example .env
-
-RUN php artisan key:generate
-
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
 
